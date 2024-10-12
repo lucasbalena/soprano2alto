@@ -59,6 +59,8 @@ func main() {
 		if transposedNote, exists := transpositionMap[note]; exists {
 			if len(transposedNote) > len(note) {
 				notesArray[i] += " "
+			} else if len(transposedNote) < len(note) {
+				transposedNote += " "
 			}
 			transposedNotesArray = append(transposedNotesArray, transposedNote)
 		} else {
