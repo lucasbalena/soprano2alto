@@ -48,6 +48,12 @@ func main() {
 
 	notesArray := strings.Fields(notes)
 
+	for i, note := range notesArray {
+		if len(note) > 1 && note[1] == 'B' {
+			notesArray[i] = note[:1] + "♭" + note[2:]
+		}
+	}
+
 	var transposedNotesArray []string
 	for i, note := range notesArray {
 		if transposedNote, exists := transpositionMap[note]; exists {
